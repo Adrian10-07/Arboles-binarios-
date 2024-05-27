@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Árbol de búsqueda binaria</title>
+</head>
+<body>
+    <section id="Registrar" class="Registrar-section">
+    <div>
+        <h2>Registrar Producto</h2>
+    <input type="text" id="NombreProducto" placeholder="Nombre del Producto">
+    <input type="number" id="Precio" placeholder="Precio">
+    <input type="number" id="Cantidad" placeholder="Cantidad">
+    <button id="btn-add" class="Agregar">Agregar</button>
+    <script type="module" src="src/controllers/script.js"></script>
+    </div>
+    </section>
+
+    <section id="buscar" class="buscar-section">
+    <div>
+    <h2>Buscar Producto</h2>
+    <input type="text" id="NombreProductoBuscar" placeholder="Nombre del Producto a Buscar">
+    <button id="btn-search" class="buscar">Buscar</button>
+    <button id="btn-max" class=" maximos">buscar maximos</button>
+    <button id="btn-min" class="minimo">buscar minimo</button>
+    </div>
+    </section>
+
+    <section id="Inventario" class="inventario-section">
+        <div>
+            <h2>Mostrar inventario </h2>
+            <button id="btn-inorder" class="recorrer">Mostrar inventario</button>
+
+        </div>
+    </section>
+
+
+</body>
+</html>

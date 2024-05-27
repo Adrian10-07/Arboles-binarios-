@@ -1,0 +1,54 @@
+
+
+body{
+    background-image: url('https://thumbs.dreamstime.com/b/modelo-de-supermercado-fondo-icono-sin-problemas-para-tiendas-y-comercio-carro-la-tienda-cesta-bolsa-estilo-etiqueta-precio-251147690.jpg');
+    
+}
+
+    .btn {
+    border: none; 
+    color: black; 
+    padding: 14px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+  }
+
+    .Agregar{background-color: white; border: 2px solid #007bff;} 
+    .Agregar:hover {background: #0b7dda; color: white;}
+    .buscar{background-color: white; border: 2px solid #ff0000;} 
+    .buscar:hover {background: #ff0000; color: white;}
+    .maximos{background-color: white; border: 2px solid #ff0000;} 
+    .maximos:hover {background: #ff0000; color: white;}
+    .minimo{background-color: white; border: 2px solid #ff0000;} 
+    .minimo:hover {background: #ff0000; color: white;}
+    .recorrer{background-color: aliceblue; border: 2px solid #5aff18;}
+    .recorrer:hover { background-color: #5aff18; color: white;}
+
+.Registrar-section{
+    background-color: rgb(8, 8, 8);
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: rgb(232, 241, 101);
+    text-align: center;
+    padding: 20px;
+    
+    
+}
+.buscar-section{
+    background-color: rgb(8, 8, 8);
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: rgb(232, 241, 101);
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.inventario-section{
+    background-color: rgb(8, 8, 8);
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: rgb(232, 241, 101);
+    text-align: center;
+    padding: 20px;
+}
