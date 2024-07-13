@@ -38,58 +38,63 @@ class BST {
       return null;
     }
 
-    if (nombreProducto === node.value.NombreProducto) {
+    if (nombreProducto === node.value.nombreProducto) {
       return node.value;
-    } else if (nombreProducto < node.value.NombreProducto) {
+    } else if (nombreProducto < node.value.nombreProducto) {
       return this.searchNode(node.left, nombreProducto);
     } else {
       return this.searchNode(node.right, nombreProducto);
     }
   }
-  findMax() {
-    return this.findMaxNode(this.root);
-  }
+
+  
   findMax() {
     return this.findMaxNode(this.#root);
-}
-
-findMin() {
+  }
+  findMin() {
     return this.findMinNode(this.#root);
-}
+  }
+  
 
-findMaxNode(node) {
-    if (node === null) {
-        return null;
-    }
-    let current = node;
-    while (current.right !== null) {
-        current = current.right;
-    }
-    return current.value;
-}
 
-findMinNode(node) {
-    if (node === null) {
-        return null;
-    }
-    let current = node;
-    while (current.left !== null) {
-        current = current.left;
-    }
-    return current.value;
-}
 
-inOrderTraversal(callback) {
-  this.inOrderTraversalNode(this.#root, callback);
-}
+  findMaxNode(node) {
+      if (node === null) {
+          return null;
+      }
+      let current = node;
+      while (current.right !== null) {
+          current = current.right;
+      }
+      return current.value;
+  }
 
-inOrderTraversalNode(node, callback) {
-  if (node !== null) {
-    this.inOrderTraversalNode(node.left, callback);
-    callback(node.value);
-    this.inOrderTraversalNode(node.right, callback);
+  findMinNode(node) {
+      if (node === null) {
+          return null;
+      }
+      let current = node;
+      while (current.left !== null) {
+          current = current.left;
+      }
+      return current.value;
+  }
+
+  inOrderTraversal(callback) {
+    this.inOrderTraversalNode(this.#root, callback);
+  }
+
+  inOrderTraversalNode(node, callback) {
+    if (node == null) {
+      return;
+    }
+    else{
+      this.inOrderTraversalNode(node.left, callback)
+      callback(node)
+      this.inOrderTraversalNode(node.right, callback)
+    }
   }
 }
   
-}
+
 export default BST;

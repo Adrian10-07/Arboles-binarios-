@@ -1,12 +1,12 @@
 class Producto{
     nombreProducto
     precio
-    cantida
+    cantidad
 
-    constructor(NombreProducto,Precio, Cantida){
+    constructor(NombreProducto,Precio, Cantidad){
         this.nombreProducto = NombreProducto
         this.precio = Precio
-        this.cantida = Cantida
+        this.cantidad = Cantidad
 
     }
 }

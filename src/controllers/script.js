@@ -28,44 +28,63 @@ document.addEventListener("DOMContentLoaded", () => {
       
   
             if (productoEncontrado) {
-            alert(`Producto encontrado: ${productoEncontrado.NombreProducto}, Cantidad: ${productoEncontrado.cantidad}`);
+            alert(`Producto encontrado: ${productoEncontrado.nombreProducto}, Cantidad: ${productoEncontrado.cantidad}, Precio: ${productoEncontrado.precio}$`);
         } else {
             alert("Producto no encontrado");
         }
     });
 
-            let btnMax = document.getElementById("btn-max");
-            btnMax.addEventListener("click", () => {
-            let maxProducto = bst.findMax();
-            if (maxProducto) {
-            alert(`Producto máximo: ${maxProducto.NombreProducto}, cantidad: ${maxProducto.cantidad}$`);
+
+    let btnMax = document.getElementById("btn-max");
+    
+
+    btnMax.addEventListener("click", () => {
+        let maxProducto = bst.findMax();
+        let maxProductContainer = document.getElementById("max-product");
+        maxProductContainer.innerHTML = "";
+
+        if (maxProducto) {
+            maxProductContainer.textContent = `Producto máximo: ${maxProducto.nombreProducto}, Precio: ${maxProducto.precio}$, Cantidad: ${maxProducto.cantidad}`;
         } else {
-            alert("No hay productos en el árbol");
+            maxProductContainer.textContent = "No hay productos en el árbol";
         }
     });
 
-            let btnMin = document.getElementById("btn-min");
-            btnMin.addEventListener("click", () => {
-            let minProducto = bst.findMin();
-            if (minProducto) {
-            alert(`Producto mínimo: ${minProducto.NombreProducto}, cantidad: ${minProducto.cantidad}$`);
+    let btnMin = document.getElementById("btn-min");
+
+    btnMin.addEventListener("click", () => {
+        let minProducto = bst.findMin();
+        let minProductContainer = document.getElementById("min-product");
+        minProductContainer.innerHTML = "";
+
+        if (minProducto) {
+            minProductContainer.textContent = `Producto mínimo: ${minProducto.nombreProducto}, Precio: ${minProducto.precio}$, Cantidad: ${minProducto.cantidad}`;
         } else {
-            alert("No hay productos en el árbol");
+            minProductContainer.textContent = "No hay productos en el árbol";
         }
     });
         
-    let btnInOrder = document.getElementById("btn-inorder");
-    btnInOrder.addEventListener("click", () => {
-        let productos = [];
-        bst.inOrderTraversal((producto) => {
-            productos.push(`Producto: ${producto.nombreProducto}, Precio: ${producto.precio}$, cantidad: ${producto.cantidad}`);
+    
+        let btnInOrder = document.getElementById("btn-recorrer");
+        btnInOrder.addEventListener("click", () => {
+            let productos = [];
+            bst.inOrderTraversal((node) => {
+                productos.push(`Producto: ${node.value.nombreProducto}, Precio: ${node.value.precio}$, Cantidad: ${node.value.cantidad}`);
+            });
+            
+            let productListContainer = document.getElementById("product-list");
+            productListContainer.innerHTML = "";
+            
+            if (productos.length > 0) {
+                let ul = document.createElement("ul");
+                productos.forEach(producto => {
+                    let li = document.createElement("li");
+                    li.textContent = producto;
+                    ul.appendChild(li);
+                });
+                productListContainer.appendChild(ul);
+            } else {
+                productListContainer.textContent = "No hay productos en el árbol";
+            }
         });
-        if (productos.length > 0) {
-            alert("Productos en el árbol:\n" + productos.join("\n"));
-        } else {
-            alert("No hay productos en el árbol");
-        }
-    });
-        
 });
-
